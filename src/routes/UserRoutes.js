@@ -2,15 +2,15 @@
 
 const express       =   require('express')
 const router        =   express.Router()
-const controller    = require('../controllers/teste')
 
+const controller    = require('../controllers/user_controller')
+
+router.post('/newUser',   controller.post)
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        title: "Node API PI_III",
-        version: "0.0.2"
+        title: "User route root"
+        
     })
 })
-
-router.post('/teste',   controller.post)
 
 module.exports = router
